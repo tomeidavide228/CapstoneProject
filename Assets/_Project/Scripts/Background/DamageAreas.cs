@@ -13,7 +13,7 @@ public class DamageAreas : MonoBehaviour
             if (hp != null)
                 hp.DecreaseHealth(damage);
 
-            collision.transform.position = respawnPoint.position;
+            collision.GetComponent<PlayerRespawn>().Respawn();
         }
     }
 }
