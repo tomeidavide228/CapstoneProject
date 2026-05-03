@@ -7,25 +7,47 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private Transform _player;
 
-    private bool _isFlipped = false;
+    private bool _isFlipped = true;
 
-	public void LookAtPlayer()
+	private void Update()
 	{
-		Vector3 flipped = transform.localScale;
-		flipped.z *= -1f;
+        if (_player == null)
+        {
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        LookAtPlayer();
+    }
 
-		if (transform.position.x > _player.position.x && _isFlipped)
-		{
-			transform.localScale = flipped;
-			transform.Rotate(0f, 180f, 0f);
-			_isFlipped = false;
-		}
-		else if (transform.position.x < _player.position.x && !_isFlipped)
-		{
-			transform.localScale = flipped;
-			transform.Rotate(0f, 180f, 0f);
-			_isFlipped = true;
-		}
-	}
+    public void LookAtPlayer()
+    {
+        float direction = _player.position.x - transform.position.x;
+        Debug.Log($"Player position: {_player.position.x}, Boss position: {transform.position.x}, Direction: {direction}");
+
+        if (direction > 0 && _isFlipped)
+        {
+            Debug.Log("Flipping boss to the right");
+            Flip();
+        }
+        else if (direction < 0 && !_isFlipped)
+        {
+            Debug.Log("Flipping boss to the left");
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        _isFlipped = !_isFlipped;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1f;
+        transform.localScale = scale;
+    }
+
+    public void StartBossFight()
+    {
+        gameObject.SetActive(true);
+    }
+
 
 }

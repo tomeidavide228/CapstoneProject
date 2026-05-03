@@ -89,7 +89,14 @@ public class BasicEnemyController : MonoBehaviour
     private void UpdateMovingState()
     {
         _groundDetected = Physics2D.Raycast(_groundCheck.position, Vector2.down, _groundCheckDistance, _whatIsGround);
-        _wallDetected = Physics2D.Raycast(_wallCheck.position, transform.right, _wallCheckDistance, _whatIsGround);
+        if(_facingDirection == 1)
+        {
+            _wallDetected = Physics2D.Raycast(_wallCheck.position, transform.right, _wallCheckDistance, _whatIsGround);
+        }
+        else
+        {
+            _wallDetected = Physics2D.Raycast(_wallCheck.position, -transform.right, _wallCheckDistance, _whatIsGround);
+        }
 
         CheckTouchDamage();
 
