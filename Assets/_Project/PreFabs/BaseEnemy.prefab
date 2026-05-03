@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1145842084733454732}
   - component: {fileID: 6276734390616474965}
   - component: {fileID: 1097126202042997109}
-  - component: {fileID: 5087183669149019635}
+  - component: {fileID: 2823519267360688407}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &5087183669149019635
+--- !u!60 &2823519267360688407
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.390625, y: 0.234375}
+    oldSize: {x: 0.78125, y: 0.46875}
     newSize: {x: 0.390625, y: 0.234375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -182,13 +182,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.1796875, y: 0.1171875}
-      - {x: -0.1953125, y: 0.1015625}
-      - {x: -0.1953125, y: -0.1171875}
-      - {x: 0.1328125, y: -0.1171875}
-      - {x: 0.1953125, y: -0.0859375}
-      - {x: 0.1953125, y: 0.0546875}
-      - {x: 0.1796875, y: 0.1171875}
+    - - {x: -0.359375, y: 0.234375}
+      - {x: -0.390625, y: 0.203125}
+      - {x: -0.40038213, y: -0.17973512}
+      - {x: 0.24415931, y: -0.17973517}
+      - {x: 0.41989636, y: -0.09967238}
+      - {x: 0.3633051, y: 0.113277845}
+      - {x: 0.27741528, y: 0.24803494}
   m_UseDelaunayMesh: 0
 --- !u!1 &3345348413017907179
 GameObject:
@@ -235,10 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4f56de75619f6488d213d2bb9db7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheckDistance: 0.2
-  _wallCheckDistance: 0.3
+  _groundCheckDistance: 0.3
+  _wallCheckDistance: 0.6
   _movementSpeed: 3
-  _maxHealth: 30
+  _maxHealth: 10
   _knockbackDuration: 0.1
   _lastTouchDamageTime: 0
   _touchDamageCooldown: 0.2
@@ -250,7 +250,7 @@ MonoBehaviour:
   _touchDamageCheck: {fileID: 8789581456968053936}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
@@ -313,7 +313,7 @@ Transform:
   m_GameObject: {fileID: 5860904334927367509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
