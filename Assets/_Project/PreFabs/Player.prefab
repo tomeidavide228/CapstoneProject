@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5805825010343406630}
   - component: {fileID: 4757723588436703344}
   - component: {fileID: 3453416703772991542}
+  - component: {fileID: 7726202015551234326}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatOn: 1
   _inputTimer: 0.2
-  _attackRadius: 0.3
+  _attackRadius: 0.8
   _attackDamage: 10
   _hitBoxPosition: {fileID: 7868388574368862798}
   _isDamageable:
@@ -259,8 +260,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2116ee0ff4b214cbe68739fe2bddb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 50
+  _maxHealth: 100
   _deathParticles: {fileID: 1962614393226834858, guid: 3d13ef1f52d189642930444f906fc622, type: 3}
+  _onHPChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI_HPBar, Assembly-CSharp
+        m_MethodName: UpdateGraphics
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDefeated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5300404799011678661}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameEvents, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7726202015551234326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300404799011678661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdee540e30425e43bf0993c8fad0cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8207822092108603988
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 8207822092108603988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

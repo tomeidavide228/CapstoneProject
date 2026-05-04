@@ -238,7 +238,7 @@ MonoBehaviour:
   _groundCheckDistance: 0.3
   _wallCheckDistance: 0.6
   _movementSpeed: 3
-  _maxHealth: 10
+  _maxHealth: 20
   _knockbackDuration: 0.1
   _lastTouchDamageTime: 0
   _touchDamageCooldown: 0.2

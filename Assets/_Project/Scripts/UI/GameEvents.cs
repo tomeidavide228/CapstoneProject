@@ -20,6 +20,8 @@ public class GameEvents : MonoBehaviour
 
     public void SetEvent(GameObject state)
     {
+        Time.timeScale = 0f;
+        MenuState.MenuOpen();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         state.SetActive(true);
