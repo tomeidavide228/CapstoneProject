@@ -20,7 +20,7 @@ public class BossAttack : MonoBehaviour
 		Collider2D collider = Physics2D.OverlapCircle(pos, _attackRange, _whatIsPlayer);
 		if (collider != null)
 		{
-			collider.GetComponent<PlayerStats>().DecreaseHealth(_attackDamage);
+            collider.GetComponent<PlayerStats>().DecreaseHealth(_attackDamage);
 		}
 	}
 
@@ -33,9 +33,18 @@ public class BossAttack : MonoBehaviour
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, _attackRange, _whatIsPlayer);
 		if (colInfo != null)
 		{
-			colInfo.GetComponent<PlayerStats>().DecreaseHealth(_enragedAttackDamage);
+            colInfo.GetComponent<PlayerStats>().DecreaseHealth(_enragedAttackDamage);
 		}
 	}
+
+    public void PlayAttackSound()
+    {
+        AudioManager.Instance.PlaySFX("Spell Impact 1");
+    }
+    public void PlayEnragedAttackSound()
+    {
+        AudioManager.Instance.PlaySFX("Rock Meteor Swarm 2");
+    }
 
     private void OnDrawGizmos()
 	{

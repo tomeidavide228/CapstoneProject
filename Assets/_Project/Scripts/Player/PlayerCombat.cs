@@ -112,6 +112,11 @@ public class PlayerCombat : MonoBehaviour
             _playerController.Knockback(direction);
         
     }
+    public void PlayAttackSound()
+    {
+        AudioManager.Instance.PlaySFX("Sword Attack 1");
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(_hitBoxPosition.position, _attackRadius);

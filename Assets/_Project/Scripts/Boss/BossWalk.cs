@@ -10,18 +10,23 @@ public class Boss_Run : StateMachineBehaviour
 
     private Transform _player;
     private Rigidbody2D _rb;
-    private Boss _boss;
+    private BossController _boss;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player")?.transform;
         _rb = animator.GetComponent<Rigidbody2D>();
-        _boss = animator.GetComponent<Boss>();
+        _boss = animator.GetComponent<BossController>();
 
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (_player == null)
+        {
+            return;
+        }
+
         _boss.LookAtPlayer();
 
         Vector2 target = new Vector2(_player.position.x, _rb.position.y);

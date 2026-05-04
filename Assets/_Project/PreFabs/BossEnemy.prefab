@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8430804006606996727}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19386683611c4dd47940d068325208d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1247899274401499351, guid: e38eb6758ac027647b3cef7d1f3b0669, type: 3}
+  _player: {fileID: 0}
 --- !u!114 &2097488303558395897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae776ef7fb190534dbfbb90484a1a9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
-  deathEffect: {fileID: 1962614393226834858, guid: 3d13ef1f52d189642930444f906fc622, type: 3}
+  _maxHealth: 200
   _currentHealth: 0
+  _secondPhaseHealth: 100
+  _hitParticle: {fileID: 244471136029637887, guid: 9ce0baf2495b702498f9b13159a52cdf, type: 3}
+  _deathParticles: {fileID: 1962614393226834858, guid: 3d13ef1f52d189642930444f906fc622, type: 3}
+  _onBossDefeat:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4980715909408091927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDamage: 10
-  _enragedAttackDamage: 20
-  _attackRange: 1
+  _enragedAttackDamage: 15
+  _attackRange: 1.9
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128

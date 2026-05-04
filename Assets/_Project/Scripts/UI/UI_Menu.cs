@@ -14,7 +14,8 @@ public class UI_Menu : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         MenuState.MenuClosed();
-        CursorManager.Instance.LockCursor();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Debug.Log("Continue Game");
     }
 
@@ -23,9 +24,15 @@ public class UI_Menu : MonoBehaviour
 
         Time.timeScale = 1f;
         MenuState.MenuClosed();
-        CursorManager.Instance.LockCursor();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        string path = Application.persistentDataPath + "/save.json";
+        if (System.IO.File.Exists(path))
+        {
+            System.IO.File.Delete(path);
+        }
         Debug.Log("Restart Game");
-        SceneManager.LoadScene("Level1");
+        FadeScreen.Instance.FadeAndLoad("Level1");
     }
 
     public void ReturnClicked()

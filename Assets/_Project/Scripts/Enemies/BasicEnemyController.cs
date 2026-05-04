@@ -157,6 +157,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         _currentHealth -= attackDetails[0];
 
+        AudioManager.Instance.PlaySFX("Hurt");
         Instantiate(_hitParticle, _enemy.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
         if (attackDetails[1] > _enemy.transform.position.x)
