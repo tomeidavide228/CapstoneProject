@@ -42,3 +42,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Void
+    uniqueID: 618217453
+    locked: 0
+  - name: Ground
+    uniqueID: 4292393885
+    locked: 0
+  - name: Walls
+    uniqueID: 3242742167
+    locked: 0
+  - name: Damage Area
+    uniqueID: 404146899
+    locked: 0
+  - name: Sign
+    uniqueID: 1301169349
+    locked: 0
+  - name: Player
+    uniqueID: 529340283
+    locked: 0
+  - name: Enemy
+    uniqueID: 1752968249
+    locked: 0
+  - name: Decoration
+    uniqueID: 2615116293
+    locked: 0
+  - name: Particels
+    uniqueID: 4122709003
+    locked: 0
